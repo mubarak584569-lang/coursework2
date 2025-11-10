@@ -6,14 +6,14 @@ public class IceCream {
         Scanner scanner = new Scanner(System.in);
         String number = "024034";
 
-        int vanilla = Integer.parseInt(number.substring(3,4));
-        int chocolate = Integer.parseInt(number.substring(4,0));
+        int vanilla = Integer.parseInt(number.substring(4,6));
+        int chocolate = Integer.parseInt(number.substring(2,4));
         int strawberry = Integer.parseInt(number.substring(0,2));
 
-        System.out.print("Would you like (v)anilla, (c)hocolate or (s)trawberry? ");
+        System.out.println("Would you like (v)anilla, (c)hocolate or (s)trawberry? ");
         String flavour = scanner.nextLine().toLowerCase();
 
-        int pricePerScoop;
+       int pricePerScoop;
         switch (flavour) {
             case "v":
                 pricePerScoop = vanilla;
@@ -29,16 +29,16 @@ public class IceCream {
                 scanner.close();
                 return;
         }
-        System.out.println("(How many scoops would you like? )");
+        System.out.println("How many scoops would you like?");
         int scoops = scanner.nextInt();
 
         if(scoops < 1){
-            System.out.println("We don't sell just a cone");
+            System.out.println("We don't sell just a cone. ");
         } else if (scoops > 3){
             System.out.println("That's too many scoops to fit in a cone. ");
         } else {
             int totalPence = 100 + (pricePerScoop * scoops);
-            System.out.printf("That will be £%.2f please.%n", totalPence / 100.0);
+            System.out.println("That will be " + String.format("%.2f", totalPence / 100.0) + " please. ");
         }
         scanner.close();
     }

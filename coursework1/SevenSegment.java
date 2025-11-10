@@ -16,14 +16,14 @@ public class SevenSegment {
     } 
 } 
 static void display(int number) {
-    String numString = Integer.toString(number);
-    int len = numString.length();
+    String numberString = Integer.toString(number);
+    int len = numberString.length();
 
     for(int line = 1; line <= 5; line++){
         String row = "";
 
         for (int i = 0; i < len; i++){
-             int digit = numString.charAt(i) - '0';
+             int digit = numberString.charAt(i) - '0';
              row += ssd(digit, line);
         }
         System.out.println(row);
