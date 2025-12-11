@@ -19,7 +19,7 @@ public class SortComparison {
 
         // Now firstly we compare suits
         if (st1 < st2) return -1;
-        if (st2 > st2) return 1;
+        if (st1 > st2) return 1;
 
         // next comparing numbers of those suits
         if (num1 < num2) return -1;
@@ -30,30 +30,28 @@ public class SortComparison {
     }
 
     // bubbleSort
-    static ArrayList<String> bubbleSort(ArrayList<String> array) {
-         ArrayList<String> arr = new ArrayList<>(array);
-
+    static void bubbleSort(String[] array) {
+         int n = array.length;
+         boolean sorted;
          
-         boolean swapped;
-         
-         for (int i = 0; i < arr.size() - 1; i++) {
-            swapped = false;
+         for (int i = 0; i < n - 1; i++) {
+            sorted = false;
         
-            for (int j = 0; j < arr.size() - 1 - i; j++) { 
-                if (cardCompare(arr.get(j), arr.get (j + 1)) > 0) { 
+            for (int j = 0; j < n - 1 - i; j++) { 
+                if (cardCompare(array[j], array[j + 1]) > 0) { 
 
-                    String temp = arr.get(j); 
-                    arr.set(j, arr.get(j + 1));
-                    arr.set(j + 1, temp);
-                    swapped = true;              
+                    String temp = array[j]; 
+                    array[j] = array[j + 1];
+                    array[j + 1]= temp;
+                    sorted = true;              
                 }
              }
         
-             if (!swapped) break;
+             if (sorted){
+                break;
+             }
 
          }
-
-         return arr;
     
     }
 }
