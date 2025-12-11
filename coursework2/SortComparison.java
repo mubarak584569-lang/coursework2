@@ -47,13 +47,13 @@ public class SortComparison {
                     arr.set(j + 1, temp);
                     swapped = true;              
                 }
-         }
+             }
         
-         if (!swapped) {
-            break;
+             if (!swapped) break;
 
          }
-    }
-    return arr;
+
+         return arr;
     
+    }
 }
