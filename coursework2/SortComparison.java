@@ -19,7 +19,7 @@ public class SortComparison {
 
         // Now firstly we compare suits
         if (st1 < st2) return -1;
-        if (st2 < st2) return 1;
+        if (st2 > st2) return 1;
 
         // next comparing numbers of those suits
         if (num1 < num2) return -1;
