@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 public class SortComparison {
 
     // cardCompare
@@ -30,26 +33,28 @@ public class SortComparison {
     }
 
     // bubbleSort
-    static void bubbleSort(String[] array) {
-         int n = array.length;
+    static ArrayList<String> bubbleSort(ArrayList<String> array) {
+         ArrayList<String> arrayList = new ArrayList<>(array);
          boolean sorted;
          
-         for (int i = 0; i < n - 1; i++) {
+         for (int i = 0; i < arrayList.size() - 1; i++) {
             sorted = false;
         
-            for (int j = 0; j < n - 1 - i; j++) { 
-                if (cardCompare(array[j], array[j + 1]) > 0) { 
+            for (int j = 0; j < arrayList.size() - 1 - i; j++) { 
+                if (cardCompare(arrayList.get(j), arrayList.get(j + 1)) > 0) { 
 
-                    String temp = array[j]; 
-                    array[j] = array[j + 1];
-                    array[j + 1]= temp;
+                    String temp = arrayList.get(j); 
+                    arrayList.set(j, arrayList.get(j + 1));
+                    arrayList.set(j + 1, temp);
                     sorted = true;              
                 }
             } 
         
              if (!sorted) break;
-             
+
          }
+         
+         return arrayList;
     
     }
 }
