@@ -45,12 +45,10 @@ public class SortComparison {
                     array[j + 1]= temp;
                     sorted = true;              
                 }
-             }
+            } 
         
-             if (sorted){
-                break;
-             }
-
+             if (!sorted) break;
+             
          }
     
     }
